@@ -68,7 +68,7 @@ class Events {
                 throw new \Exception ('Aucun résultat n\'a été trouvé');
             };
             return $result;
-
+    }
     public function hydrate (Event $event, array $data){
         $event->setName($data['name']);
         $event->setDescription($data['name']);
@@ -115,7 +115,5 @@ class Events {
              $event->getEnd()->format('Y-m-d H:i:s'),
              $event->getId()
         ]);
-         
-     }
-
-?>
+    }
+}
