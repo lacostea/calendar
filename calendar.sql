@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 15 nov. 2020 à 10:27
+-- Généré le :  Dim 15 nov. 2020 à 16:55
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.4.0
 
@@ -37,7 +37,14 @@ CREATE TABLE IF NOT EXISTS `evenement` (
   `start` datetime NOT NULL,
   `end` datetime NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `evenement`
+--
+
+INSERT INTO `evenement` (`ID`, `nom`, `plaque`, `description`, `start`, `end`) VALUES
+(1, 'test', 'tes-254-255', 'test1', '2020-11-16 09:00:00', '2020-11-16 18:00:00');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
