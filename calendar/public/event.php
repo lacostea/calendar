@@ -1,9 +1,9 @@
 
 <?php
 
-require '../src/bootstrap.php';
+require '../src/boostrap.php';
 require '../src/Date/Events.php';
-/*require '../views/header.php';*/
+require '../views/header.php';
 $pdo = get_pdo();
 $events = new date\Events($pdo);
 if (! isset($_GEET['id'])){
