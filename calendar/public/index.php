@@ -2,7 +2,7 @@
 <?php
 
 require '../views/header.php';
-require'../src/boostrap.php';
+require '../src/boostrap.php';
 require '../src/Date/Month.php';
 require '../src/Date/Events.php';
 $pdo=get_pdo();
@@ -14,13 +14,13 @@ $weeks= $month->getWeeks();
 $end = (clone $start)->modify('+' . (6 + 7 * ( $weeks -1)) . 'days' );
 $events = $events->getEventsBetween($start, $end);
 var_dump($events);
-render('../views/header.php', ['title'=>$event->getName()]);
+/*render('../views/header.php', ['title'=>$event->getName()]);*/
 ?>
 
 <div class="calendar">
 
 <?php  if (isset($_GET['success'])): ?>
-<div class=container">
+<div class="container">
     <div class="alert alert-succes">
     L'événement à bien été enregistré
     </div>
@@ -47,11 +47,11 @@ render('../views/header.php', ['title'=>$event->getName()]);
     <tr>
         <?php 
         foreach($month->day as $k => $day):
-            $date = (clone $start)->modify("+".($k + $i * 7 ) . "days")
-            $eventsForDay = $events[$date->format('Y-m-d')] ?? [] ;
+            $date = (clone $start)->modify("+".($k + $i * 7 ) . "days");
+            $eventsForDay = $events[$date->format('Y-m-d')] ?? [];
         ?>
 
-        <td class="<?= $month->withMonth($date) ? '' : 'calendar__othermonth';?>">
+        <td class="<?= $month->withinMonth ($date) ? '' : 'calendar__othermonth';?>">
             <?php if ($i=== 0): ?>
             <div class="calendar__weekday"><?= $day; ?></div>
         <?php endif; ?>
@@ -71,7 +71,7 @@ render('../views/header.php', ['title'=>$event->getName()]);
 </table>
 
 
-<a href="/add.php" class="calendar__button">+</a>
+<a href="./add.php" class="calendar__button">+</a>
 </div>
 
 
