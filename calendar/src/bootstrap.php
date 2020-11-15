@@ -1,7 +1,7 @@
 <?php 
-/* require'../vendor/autoload.php^;*/ 
+/*require 'public\vendor\composer\autoload.php';*/ 
 function e404 (){
-    require'../public/404.php';
+    require'public\404.php';
     exit();
 }
 
