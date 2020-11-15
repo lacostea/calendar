@@ -2,6 +2,8 @@
 
 namespace App\Date;
 
+use DateTime;
+
 class Month{
 
     public$day = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
@@ -32,7 +34,7 @@ class Month{
             $year = intval(date('Y'));
         }
 
-        $month = $month % 12;
+        /*$month = $month % 12;*/
         
         $this ->month = $month;
         $this ->year = $year;
@@ -106,6 +108,15 @@ class Month{
             $year -= 1; 
         }
         return new Month($month, $year);
+    }
+    /**
+     * est ce que le jour est dans le mois en cours  
+     *
+     * @param \DateTime $date
+     * @return boolean
+     */
+    public function withinMonth (\DateTime $date): bool {
+        return $this->getStratingDay()->format('Y-m-d') === $date->format('Y-m-d'); 
     }
 
 }
