@@ -1,7 +1,7 @@
 <?php
 namespace date;
 
-use App\Validator;
+use App\validator;
 
 class EventValidator extends Validator {
   
