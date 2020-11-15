@@ -1,0 +1,16 @@
+{
+    "name": "localhost/calendar",
+    "authors": [
+        {
+            "name": "test",
+            "email": "contact@test.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Calendar\\": "src/date",
+            "App\\": "src/App"
+        }
+    },
+    "require": {}
+}
