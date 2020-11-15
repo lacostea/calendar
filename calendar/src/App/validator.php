@@ -50,8 +50,8 @@ class Validator {
     }
     public function beforTime (string $startField, string $endField){
         if($this->time($startField) && $this->time($endField))
-        $start = \DateTime::createFromFormat('H:i', $this->data[$startField];
-        $end = \DateTime::createFromFormat('H:i', $this->data[$endField];
+        $start = \DateTime::createFromFormat('H:i', $this->data[$startField]);
+        $end = \DateTime::createFromFormat('H:i', $this->data[$endField]);
         if ($start->getTimestamp() > $end->getTimestamp()){
             $this->errors[$startField] = "Le temps de début doit être inférieur de fin ";
             return false;
