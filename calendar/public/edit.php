@@ -48,8 +48,8 @@ render('../views/header.php', ['title'=>$event->getName()]);
 <?= h($event->getName());?>
 </small></h1>
 <form action="" method="post" class="form">
-        <?php render('views/form.php', ['data'=>[$data. 'errors' => $errors]); ?>
-    
+
+        <?php render('src\calendar\form.php', ['data'=>$data, 'errors' => $errors]); ?>
             <div class="form-group">
                 <button class="btn btn-primary">modifier l'événement</button>
             </div>
