@@ -1,5 +1,6 @@
 <?php
-require'../src/bootstrap.php';
+require '..\src\boostrap.php';
+
 
 
 $data = [];
@@ -32,12 +33,12 @@ render('header', ['title'=>'ajouter un événement']);
 
 
     <h1>Ajouter un événement</h1>
-    <form action="" method="post" class="form">
-        <?php render('views/form.php'. ['data'=> $data. 'errors'=>$errors]); ?>
-    
-            <div class="form-group">
+        <?php render('calendar/form', ['data' => $data, 'errors' =>$errors]); ?>
+        <form action="" method="post" class="form">
+                <div class="form-group">
                 <button class="btn btn-primary">Ajouter l'événement</button>
             </div>
+    
         
 </div>
 
